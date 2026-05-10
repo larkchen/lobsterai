@@ -28,6 +28,7 @@ RUN git clone --branch 2026.5.9 --depth 1 \
       https://github.com/netease-youdao/LobsterAI.git /app
 
 RUN sed -i '455a if (id === "moltbot-popo") continue;' scripts/ensure-openclaw-plugins.cjs
+RUN sed -i '109a if (plugin.id === "moltbot-popo") continue;' scripts/electron-builder-hooks.cjs
 
 RUN npm install
 
