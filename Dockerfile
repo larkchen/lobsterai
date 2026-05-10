@@ -27,6 +27,8 @@ WORKDIR /app
 RUN git clone --branch 2026.5.9 --depth 1 \
       https://github.com/netease-youdao/LobsterAI.git /app
 
+RUN sed -i 's/"optional": true/"optional": false/g' package.json
+
 RUN npm install
 
 RUN npm install pnpm
