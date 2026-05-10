@@ -27,7 +27,7 @@ WORKDIR /app
 RUN git clone --branch 2026.5.9 --depth 1 \
       https://github.com/netease-youdao/LobsterAI.git /app
 
-RUN sed -i 's/"optional": true/"optional": false/g' package.json
+RUN sed -i '455a if (id === "moltbot-popo") continue;' scripts/ensure-openclaw-plugins.cjs
 
 RUN npm install
 
